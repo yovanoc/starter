@@ -1,0 +1,3 @@
+- mettre overmind ou autre gestion de state?
+- storybook ?
+- fix headers next.config.js pour score secu mozilla ?

@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://allympian.com
+
+# Sitemaps
+Sitemap: https://allympian.com/sitemap.xml
