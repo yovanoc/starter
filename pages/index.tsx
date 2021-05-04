@@ -19,11 +19,11 @@ import {
 import { RouterContext } from "next/dist/next-server/lib/router-context";
 
 const MainDiv = styled("main", {
-  background: "$aLightBlue",
+  background: "$blue100",
 });
 
 const Test = styled("span", {
-  color: "$aDarkBlue",
+  color: "$blue1000",
 });
 
 type PageProps = PropsWithServerCache<{
@@ -69,7 +69,7 @@ const Home: NextPage<PageProps> = ({ cacheSnapshot, test }) => {
 
   return (
     <>
-      <NextSeo title="Allympian" description="Allympian HomePage" />
+      <NextSeo title="Starter" description="Starter HomePage" />
       <MainDiv>
         <Header title={t("h1")} />
         <div>

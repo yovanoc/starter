@@ -4,8 +4,8 @@ const seo: NextSeoProps = {
   openGraph: {
     type: "website",
     locale: "en_IE",
-    url: "https://allympian.com/",
-    site_name: "Allympian",
+    url: "https://starter.com/",
+    site_name: "Starter",
   },
   twitter: {
     handle: "@handle",

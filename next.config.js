@@ -3,6 +3,7 @@ const withPWA = require("next-pwa");
 const runtimeCaching = require("next-pwa/cache");
 const { PHASE_DEVELOPMENT_SERVER } = require("next/constants");
 const { i18n } = require("./next-i18next.config");
+const withBundleAnalyzer = require("@next/bundle-analyzer");
 
 const base = {
   i18n,
@@ -24,7 +25,7 @@ const base = {
   //           value: 'deny',
   //         }, {
   //           key: 'Content-Security-Policy',
-  //           value: "default-src 'self' *.allypian.com",
+  //           value: "default-src 'self' *.starter.com",
   //         }, {
   //           key: 'X-XSS-Protection',
   //           value: "1; mode=block",
@@ -50,5 +51,7 @@ module.exports = (phase, { defaultConfig }) => {
     /* config options for all phases except development here */
   }
 
-  return withPWA(config);
+  return withBundleAnalyzer({
+    enabled: process.env.ANALYZE === "true",
+  })(withPWA(config));
 };

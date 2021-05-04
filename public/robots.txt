@@ -3,7 +3,7 @@ User-agent: *
 Allow: /
 
 # Host
-Host: https://allympian.com
+Host: https://starter.com
 
 # Sitemaps
-Sitemap: https://allympian.com/sitemap.xml
+Sitemap: https://starter.com/sitemap.xml

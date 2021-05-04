@@ -7,14 +7,14 @@ export default class Document extends NextDocument {
     return (
       <Html>
         <Head>
-          <meta name="application-name" content="Allympian" />
+          <meta name="application-name" content="Starter" />
           <meta name="apple-mobile-web-app-capable" content="yes" />
           <meta
             name="apple-mobile-web-app-status-bar-style"
             content="default"
           />
-          <meta name="apple-mobile-web-app-title" content="Allympian" />
-          <meta name="description" content="Allympian Description" />
+          <meta name="apple-mobile-web-app-title" content="Starter" />
+          <meta name="description" content="Starter Description" />
           <meta name="format-detection" content="telephone=no" />
           <meta name="mobile-web-app-capable" content="yes" />
           <meta
@@ -55,11 +55,11 @@ export default class Document extends NextDocument {
           />
 
           <meta name="twitter:card" content="summary" />
-          <meta name="twitter:url" content="https://allypian.com" />
-          <meta name="twitter:title" content="Allympian" />
+          <meta name="twitter:url" content="https://starter.com" />
+          <meta name="twitter:title" content="Starter" />
           <meta
             name="twitter:description"
-            content="Best Allympian in the world"
+            content="Best Starter in the world"
           />
           <meta
             name="twitter:image"
@@ -67,16 +67,13 @@ export default class Document extends NextDocument {
           />
           <meta name="twitter:creator" content="@yovanoc" />
           <meta property="og:type" content="website" />
-          <meta property="og:title" content="Allympian" />
-          <meta
-            property="og:description"
-            content="Best Allympian in the world"
-          />
-          <meta property="og:site_name" content="Allympian" />
-          <meta property="og:url" content="https://allympian.com" />
+          <meta property="og:title" content="Starter" />
+          <meta property="og:description" content="Best Starter in the world" />
+          <meta property="og:site_name" content="Starter" />
+          <meta property="og:url" content="https://starter.com" />
           <meta
             property="og:image"
-            content="https://allympian.com/icons/apple-touch-icon.png"
+            content="https://starter.com/icons/apple-touch-icon.png"
           />
         </Head>
         <body>
