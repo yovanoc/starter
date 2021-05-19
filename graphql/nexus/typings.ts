@@ -5,6 +5,9 @@
 
 import * as PrismaClient from ".prisma/client"
 import { Context } from "./../context"
+import { FieldShieldResolver, ObjectTypeShieldResolver } from "nexus-shield"
+import { FieldAuthorizeResolver } from "nexus/dist/plugins/fieldAuthorizePlugin"
+import { QueryComplexity } from "nexus/dist/plugins/queryComplexityPlugin"
 import { core } from "nexus"
 declare global {
   interface NexusGenCustomInputMethods<TypeName extends string> {
@@ -188,8 +191,31 @@ export interface NexusGenTypes {
 
 declare global {
   interface NexusGenPluginTypeConfig<TypeName extends string> {
+    /**
+     * Default authorization rule to execute on all fields of this object
+     */
+    shield?: ObjectTypeShieldResolver<TypeName>
   }
   interface NexusGenPluginFieldConfig<TypeName extends string, FieldName extends string> {
+    /**
+     * Authorization rule to execute for this field
+     */
+    shield?: FieldShieldResolver<TypeName, FieldName>
+    /**
+     * Authorization for an individual field. Returning "true"
+     * or "Promise<true>" means the field can be accessed.
+     * Returning "false" or "Promise<false>" will respond
+     * with a "Not Authorized" error for the field.
+     * Returning or throwing an error will also prevent the
+     * resolver from executing.
+     */
+    authorize?: FieldAuthorizeResolver<TypeName, FieldName>
+    /**
+     * The complexity for an individual field. Return a number
+     * or a function that returns a number to specify the
+     * complexity for this field.
+     */
+    complexity?: QueryComplexity<TypeName, FieldName>
   }
   interface NexusGenPluginInputFieldConfig<TypeName extends string, FieldName extends string> {
   }

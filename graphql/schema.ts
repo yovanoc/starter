@@ -1,7 +1,9 @@
-import { makeSchema } from "nexus";
+import { fieldAuthorizePlugin, makeSchema, queryComplexityPlugin } from "nexus";
 import path from "path";
 import * as types from "./types";
 import { nexusPrisma } from "nexus-plugin-prisma";
+import { nexusShield, allow } from "nexus-shield";
+import { ForbiddenError } from "apollo-server-micro";
 
 export const schema = makeSchema({
   types,
@@ -24,5 +26,11 @@ export const schema = makeSchema({
       prismaClient: (ctx) => ctx.prisma,
       experimentalCRUD: true,
     }),
+    nexusShield({
+      defaultError: new ForbiddenError("Not allowed"),
+      defaultRule: allow,
+    }),
+    fieldAuthorizePlugin(),
+    queryComplexityPlugin(),
   ],
 });

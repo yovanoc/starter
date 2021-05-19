@@ -42,7 +42,7 @@ export const generatedSchema = {
   },
   subscription: {
     __typename: { __type: "String!" },
-    foobars: { __type: "Boolean" },
+    foobars: { __type: "Boolean!" },
   },
   Test: {
     __typename: { __type: "String!" },
@@ -64,7 +64,7 @@ export interface Mutation {
 
 export interface Subscription {
   __typename: "Subscription" | undefined;
-  foobars?: Maybe<ScalarsEnums["Boolean"]>;
+  foobars: ScalarsEnums["Boolean"];
 }
 
 export interface Test {
@@ -102,4 +102,4 @@ export type MakeNullable<T> = {
   [K in keyof T]: T[K] | undefined;
 };
 
-export type ScalarsEnums = MakeNullable<Scalars>;
+export interface ScalarsEnums extends MakeNullable<Scalars> {}
